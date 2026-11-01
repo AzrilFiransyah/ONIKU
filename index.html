@@ -702,6 +702,41 @@
         </div>
     </div>
 
+    <div id="preorder-closed-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+      
+        <div id="preorder-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <div class="relative bg-[#2A1E1C] border border-[#E8D0B8]/20 text-white w-full max-w-sm rounded-2xl p-6 shadow-xl z-10 transform scale-95 opacity-0 transition-all duration-300">
+            
+            <button id="preorder-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white transition" aria-label="Tutup">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center mt-2 mb-6">
+                <div class="w-12 h-12 mx-auto rounded-full bg-[#91171D] text-[#E8D0B8] flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-store-slash"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Pre-Order Ditutup</h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Maaf Onimate, ONIKU udah close batch 1 nih, tungguin info pembukaan batch 2 di Instagram kita ya! <br> <span class="text-[#D97706] font-semibold">Follow IG: @ok.oniku</span>
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <a href="https://www.instagram.com/ok.oniku?dlrf=cDQ5ZnZqaXE5MmQ=" target="_blank" rel="noopener noreferrer"
+                    class="w-full bg-[#D97706] hover:bg-[#b45309] text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Cek Instagram</span>
+                </a>
+                <button id="btn-see-menu"
+                    class="w-full bg-white/10 hover:bg-white/15 text-gray-200 font-semibold py-2.5 px-4 rounded-xl text-center text-sm transition">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>

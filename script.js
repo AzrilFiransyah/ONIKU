@@ -1,5 +1,36 @@
 $(document).ready(function () {
-    // Efek Klik pada Card Produk (Menampilkan Modal Detail)
+
+    const isPreorderClosed = true;
+
+    function openPreorderClosedModal() {
+        $('#preorder-closed-modal').removeClass('hidden');
+        setTimeout(function () {
+            $('#preorder-closed-modal .relative').removeClass('scale-95 opacity-0').addClass('scale-100 opacity-100');
+        }, 10);
+    }
+
+    function closePreorderClosedModal() {
+        $('#preorder-closed-modal .relative').removeClass('scale-100 opacity-100').addClass('scale-95 opacity-0');
+        setTimeout(function () {
+            $('#preorder-closed-modal').addClass('hidden');
+        }, 300);
+    }
+
+    $('#preorder-modal-close, #preorder-backdrop, #btn-see-menu').on('click', closePreorderClosedModal);
+
+    if (isPreorderClosed) {
+        setTimeout(function () {
+            openPreorderClosedModal();
+        }, 800);
+    }
+
+    $('a[href*="forms.gle"]').on('click', function (e) {
+        if (isPreorderClosed) {
+            e.preventDefault();
+            openPreorderClosedModal();
+        }
+    });
+
     $('.card-product').on('click', function () {
         const category = $(this).attr('data-category') || 'Produk';
         const title = $(this).attr('data-title') || $(this).find('h3').text();
@@ -32,10 +63,14 @@ $(document).ready(function () {
     // Klik tombol close atau area backdrop untuk menutup modal
     $('#modal-close, #modal-backdrop').on('click', closeModal);
 
-    // Klik tombol pesanan di dalam modal (mengarah ke Google Form)
+    // Klik tombol pesanan di dalam modal (mengarah ke Google Form / Popup Close PO)
     $('#modal-order-btn').on('click', function () {
         closeModal();
-        window.open('https://forms.gle/1cHA12sBRiZugDF29', '_blank');
+        if (isPreorderClosed) {
+            setTimeout(openPreorderClosedModal, 350);
+        } else {
+            window.open('https://forms.gle/1cHA12sBRiZugDF29', '_blank');
+        }
     });
 
     // Data Anggota Tim
