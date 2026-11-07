@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    const isPreorderClosed = true;
+    const isPreorderClosed = false;
 
     function openPreorderClosedModal() {
         $('#preorder-closed-modal').removeClass('hidden');
@@ -69,7 +69,7 @@ $(document).ready(function () {
         if (isPreorderClosed) {
             setTimeout(openPreorderClosedModal, 350);
         } else {
-            window.open('https://forms.gle/1cHA12sBRiZugDF29', '_blank');
+            window.open('https://forms.gle/rb8Y8efSqYk5r7Hr5', '_blank');
         }
     });
 
